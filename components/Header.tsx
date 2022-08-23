@@ -1,15 +1,25 @@
-import { NextPage } from "next";
 import Image from "next/image";
 import style from "../styles/Header.module.scss";
 import logo from "../public/logo.png";
 import { MdMenu } from "react-icons/md";
 import Link from "next/link";
+import { FC } from "react";
 
-const Header: NextPage = () => {
+const Header: FC = () => {
   return (
     <header className={style.container}>
       <div className={style.logo}>
-        <Image src={logo} width={logo.width * 0.4} height={logo.height * 0.4} />
+        <Link href="/">
+          <a>
+            <Image
+              src={logo}
+              width={logo.width * 0.4}
+              height={logo.height * 0.4}
+              priority
+              unoptimized
+            />
+          </a>
+        </Link>
       </div>
       <nav>
         <ul className={style.navList}>
