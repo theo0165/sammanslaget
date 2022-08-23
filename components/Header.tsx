@@ -11,13 +11,7 @@ const Header: FC = () => {
       <div className={style.logo}>
         <Link href="/">
           <a>
-            <Image
-              src={logo}
-              width={logo.width * 0.4}
-              height={logo.height * 0.4}
-              priority
-              unoptimized
-            />
+            <img src={logo.src} width={logo.width * 0.4} />
           </a>
         </Link>
       </div>

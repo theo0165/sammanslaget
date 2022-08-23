@@ -6,6 +6,18 @@
   padding: 24px;
 }
 
+.logo {
+  img {
+    @media screen and (max-width: 440px) {
+      width: 260px;
+    }
+
+    @media screen and (max-width: 370px) {
+      width: 220px;
+    }
+  }
+}
+
 .navList {
   list-style-type: none;
   margin: 0;
@@ -17,7 +29,7 @@
 
   li {
     display: inline-block;
-    padding: 0 12px;
+    margin: 0 12px;
     cursor: pointer;
 
     &:last-of-type {
