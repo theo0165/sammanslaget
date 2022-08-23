@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FC } from "react";
 import style from "../styles/Person.module.scss";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { MdOpenInNew } from "react-icons/md";
 import Link from "next/link";
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
     linkedin?: string;
     email?: string;
     github?: string;
+    website?: string;
   };
 }
 
@@ -40,6 +42,14 @@ const Person: FC<Props> = ({ name, image, contact }) => {
                 <Link href={contact.github}>
                   <a>
                     <AiFillGithub size="32px" />
+                  </a>
+                </Link>
+              )}
+
+              {contact.website && (
+                <Link href={contact.website}>
+                  <a>
+                    <MdOpenInNew size="32px" />
                   </a>
                 </Link>
               )}

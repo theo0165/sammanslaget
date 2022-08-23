@@ -23,6 +23,7 @@ const Test: NextPage = () => {
           linkedin: "#",
           email: "test@example.com",
           github: "https://github.com/theo0165",
+          website: "#",
         }}
       />
     </>
