@@ -1,13 +1,23 @@
-import Image from "next/image";
 import style from "../styles/Header.module.scss";
 import logo from "../public/logo.png";
 import { MdMenu } from "react-icons/md";
 import Link from "next/link";
 import { FC } from "react";
 
-const Header: FC = () => {
+interface Props {
+  noBg?: boolean;
+  absolute?: boolean;
+}
+
+const Header: FC<Props> = ({ noBg, absolute }) => {
   return (
-    <header className={style.container}>
+    <header
+      className={`
+        ${style.container}
+        ${noBg ? style.noBg : style.bg}
+        ${absolute ? style.absolute : ""}
+      `}
+    >
       <div className={style.logo}>
         <Link href="/">
           <a>
@@ -21,10 +31,10 @@ const Header: FC = () => {
             <Link href="/">Spelet</Link>
           </li>
           <li>
-            <Link href="/">Om oss</Link>
+            <Link href="/om">Om oss</Link>
           </li>
           <li>
-            <Link href="/">Björkåfirhet</Link>
+            <Link href="/bjorkafrihet">Björk&frihet</Link>
           </li>
         </ul>
         <div className={style.hamburger}>

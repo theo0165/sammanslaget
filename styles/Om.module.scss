@@ -1,0 +1,32 @@
+.container {
+  margin-bottom: 60px;
+
+  > h1 {
+    text-align: center;
+    margin: 60px 0;
+    padding: 0;
+    font-weight: 300;
+
+    svg {
+      height: 25px;
+    }
+  }
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 90px;
+
+  .three {
+    display: flex;
+    column-gap: 90px;
+  }
+
+  .two {
+    display: flex;
+    column-gap: 90px;
+  }
+}

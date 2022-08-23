@@ -1,9 +1,25 @@
+@import "variables.scss";
+
 .container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px;
+  color: white;
+}
+
+.absolute {
+  position: absolute;
+  z-index: 99999;
+}
+
+.bg {
+  background: $green2;
+}
+
+.noBg {
+  background: transparent;
 }
 
 .logo {
