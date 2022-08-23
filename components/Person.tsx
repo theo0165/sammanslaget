@@ -8,6 +8,7 @@ import Link from "next/link";
 interface Props {
   name: string;
   image: string;
+  education: string;
   contact: {
     linkedin?: string;
     email?: string;
@@ -16,7 +17,7 @@ interface Props {
   };
 }
 
-const Person: FC<Props> = ({ name, image, contact }) => {
+const Person: FC<Props> = ({ name, image, education, contact }) => {
   return (
     <div className={style.card}>
       <div className={style.inner}>
@@ -24,32 +25,35 @@ const Person: FC<Props> = ({ name, image, contact }) => {
           <Image src={image} layout="fill" objectFit="cover" />
         </div>
         <div className={style.back}>
-          <h1>{name}</h1>
+          <div>
+            <h1>{name}</h1>
+            <h3>{education}</h3>
+          </div>
           <div>
             {contact.email && (
               <a href={`mailto:${contact.email}`}>{contact.email}</a>
             )}
             <div className={style.links}>
               {contact.linkedin && (
-                <Link href={contact.linkedin} passHref>
-                  <a>
-                    <AiFillLinkedin size="32px" />
+                <Link href={contact.linkedin}>
+                  <a target="_blank">
+                    <AiFillLinkedin size="24px" />
                   </a>
                 </Link>
               )}
 
               {contact.github && (
                 <Link href={contact.github}>
-                  <a>
-                    <AiFillGithub size="32px" />
+                  <a target="_blank">
+                    <AiFillGithub size="24px" />
                   </a>
                 </Link>
               )}
 
               {contact.website && (
                 <Link href={contact.website}>
-                  <a>
-                    <MdOpenInNew size="32px" />
+                  <a target="_blank">
+                    <MdOpenInNew size="24px" />
                   </a>
                 </Link>
               )}

@@ -17,8 +17,9 @@ const Test: NextPage = () => {
         style={{ width: "100%", height: "100%" }}
       /> */}
       <Person
-        name="Test"
+        name="Theo Sandell"
         image="/profile.png"
+        education="WU"
         contact={{
           linkedin: "#",
           email: "test@example.com",
