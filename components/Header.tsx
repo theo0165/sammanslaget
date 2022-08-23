@@ -18,13 +18,13 @@ const Header: FC = () => {
       <nav>
         <ul className={style.navList}>
           <li>
-            <Link href="/">Hem</Link>
-          </li>
-          <li>
-            <Link href="/">Spela</Link>
+            <Link href="/">Spelet</Link>
           </li>
           <li>
             <Link href="/">Om oss</Link>
+          </li>
+          <li>
+            <Link href="/">Björkåfirhet</Link>
           </li>
         </ul>
         <div className={style.hamburger}>

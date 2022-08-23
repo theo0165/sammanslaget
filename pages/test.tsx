@@ -19,7 +19,11 @@ const Test: NextPage = () => {
       <Person
         name="Test"
         image="/profile.png"
-        contact={{ linkedin: "#", email: "test@example.com" }}
+        contact={{
+          linkedin: "#",
+          email: "test@example.com",
+          github: "https://github.com/theo0165",
+        }}
       />
     </>
   );
