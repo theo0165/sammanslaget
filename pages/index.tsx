@@ -5,8 +5,10 @@ import Header from "../components/Header";
 import hero from "../public/hero.png";
 import style from "../styles/Home.module.scss";
 import { RiFullscreenLine } from "react-icons/ri";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
+  const [doesFullscreenWork, setDoesFullscreenWork] = useState(true);
   const { unityProvider, loadingProgression, isLoaded, requestFullscreen } =
     useUnityContext({
       loaderUrl: "game/game.loader.js",
@@ -18,6 +20,12 @@ const Home: NextPage = () => {
   const loadingPercentage = Math.round(loadingProgression * 100);
 
   const setFullscreen = () => requestFullscreen(true);
+
+  useEffect(() => {
+    if (/iPhone|iP[oa]d|Mobile Safari/.test(navigator.userAgent)) {
+      setDoesFullscreenWork(false);
+    }
+  }, []);
 
   return (
     <>
@@ -41,13 +49,15 @@ const Home: NextPage = () => {
               </div>
             )}
           </div>
-          <div className={style.fullscreen}>
-            <RiFullscreenLine
-              size="36px"
-              color="white"
-              onClick={setFullscreen}
-            />
-          </div>
+          {doesFullscreenWork && (
+            <div className={style.fullscreen}>
+              <RiFullscreenLine
+                size="36px"
+                color="white"
+                onClick={setFullscreen}
+              />
+            </div>
+          )}
         </div>
       </div>
     </>

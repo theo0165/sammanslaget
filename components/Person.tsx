@@ -57,7 +57,7 @@ const Person: FC<Props> = ({ name, image, education, contact }) => {
     >
       <div className={style.inner}>
         <div className={style.front}>
-          <Image src={image} layout="fill" objectFit="cover" />
+          <Image src={image} layout="fill" objectFit="cover" priority />
         </div>
         <div className={style.back}>
           <div>

@@ -1,8 +1,11 @@
 import style from "../styles/Header.module.scss";
 import logo from "../public/logo.png";
-import { MdMenu, MdClose } from "react-icons/md";
+import { MdMenu, MdOutlineGroups } from "react-icons/md";
+import { IoGameControllerOutline } from "react-icons/io5";
 import Link from "next/link";
 import { FC, useState } from "react";
+import Image from "next/image";
+import bofIcon from "../public/bof_icon.png";
 
 interface Props {
   noBg?: boolean;
@@ -12,8 +15,7 @@ interface Props {
 const Header: FC<Props> = ({ noBg, absolute }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const openMobileMenu = () => setMobileOpen(true);
-  const closeMobileMenu = () => setMobileOpen(false);
+  const toggleMobileMenu = () => setMobileOpen(!mobileOpen);
 
   return (
     <header
@@ -43,24 +45,26 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
           </li>
         </ul>
         <div className={style.hamburger}>
-          <MdMenu size={"32px"} onClick={openMobileMenu} />
+          <MdMenu size={"32px"} onClick={toggleMobileMenu} />
         </div>
       </nav>
       <nav className={`${style.mobileMenu} ${mobileOpen && style.open}`}>
-        <div className={style.closeBtn}>
-          <MdClose size="32px" onClick={closeMobileMenu} />
+        <div className={style.mobileMenuInner}>
+          <ul>
+            <li>
+              <IoGameControllerOutline size={32} color="black" />
+              <Link href="/">Spelet</Link>
+            </li>
+            <li>
+              <MdOutlineGroups size={32} color="black" />
+              <Link href="/om">Om oss</Link>
+            </li>
+            <li>
+              <Image src={bofIcon} width="32px" height="32px" />
+              <Link href="/bjorkafrihet">Björk&frihet</Link>
+            </li>
+          </ul>
         </div>
-        <ul>
-          <li>
-            <Link href="/">Spelet</Link>
-          </li>
-          <li>
-            <Link href="/om">Om oss</Link>
-          </li>
-          <li>
-            <Link href="/bjorkafrihet">Björk&frihet</Link>
-          </li>
-        </ul>
       </nav>
     </header>
   );
