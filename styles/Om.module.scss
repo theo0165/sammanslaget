@@ -20,13 +20,17 @@
   align-items: center;
   row-gap: 90px;
 
+  .two,
   .three {
     display: flex;
     column-gap: 90px;
   }
 
-  .two {
-    display: flex;
-    column-gap: 90px;
+  @media screen and (max-width: 900px) {
+    .two,
+    .three {
+      flex-direction: column;
+      row-gap: 90px;
+    }
   }
 }

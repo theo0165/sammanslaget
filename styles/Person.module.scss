@@ -8,11 +8,19 @@
   * {
     border-radius: 50%;
   }
+}
 
+.hover {
   &:hover {
     .inner {
       transform: rotateY(180deg);
     }
+  }
+}
+
+.open {
+  .inner {
+    transform: rotateY(180deg);
   }
 }
 
