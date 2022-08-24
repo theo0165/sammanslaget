@@ -28,7 +28,7 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
       <div className={style.logo}>
         <Link href="/">
           <a>
-            <img src={logo.src} width={logo.width * 0.4} />
+            <h1>Sortera mera!</h1>
           </a>
         </Link>
       </div>
@@ -41,7 +41,7 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
             <Link href="/om">Om oss</Link>
           </li>
           <li>
-            <Link href="/bjorkafrihet">Björk&frihet</Link>
+            <Link href="/bjorkafrihet">björk&frihet</Link>
           </li>
         </ul>
         <div className={style.hamburger}>
@@ -61,7 +61,7 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
             </li>
             <li>
               <Image src={bofIcon} width="32px" height="32px" />
-              <Link href="/bjorkafrihet">Björk&frihet</Link>
+              <Link href="/bjorkafrihet">björk&frihet</Link>
             </li>
           </ul>
         </div>

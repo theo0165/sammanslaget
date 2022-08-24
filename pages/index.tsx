@@ -6,20 +6,42 @@ import hero from "../public/hero.png";
 import style from "../styles/Home.module.scss";
 import { RiFullscreenLine } from "react-icons/ri";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
   const [doesFullscreenWork, setDoesFullscreenWork] = useState(true);
-  const { unityProvider, loadingProgression, isLoaded, requestFullscreen } =
-    useUnityContext({
-      loaderUrl: "game/game.loader.js",
-      dataUrl: "game/game.data",
-      frameworkUrl: "game/game.framework.js",
-      codeUrl: "game/game.wasm",
-    });
+  const {
+    unityProvider,
+    loadingProgression,
+    isLoaded,
+    requestFullscreen,
+    unload,
+  } = useUnityContext({
+    loaderUrl: "game/game.loader.js",
+    dataUrl: "game/game.data",
+    frameworkUrl: "game/game.framework.js",
+    codeUrl: "game/game.wasm",
+  });
+
+  const router = useRouter();
 
   const loadingPercentage = Math.round(loadingProgression * 100);
 
   const setFullscreen = () => requestFullscreen(true);
+
+  useEffect(() => {
+    const handleRouteChange = async () => {
+      await unload();
+    };
+
+    window.addEventListener("beforeunload", handleRouteChange);
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleRouteChange);
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router]);
 
   useEffect(() => {
     if (/iPhone|iP[oa]d|Mobile Safari/.test(navigator.userAgent)) {
@@ -29,7 +51,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Header noBg absolute />
+      <Header noBg />
       <div className={style.imageContainer}>
         <Image
           src={hero}
