@@ -69,7 +69,8 @@ const Person: FC<Props> = ({
           </div>
           <div className={style.frontInfo}>
             <h3>{name}</h3>
-            <p>{education}</p>
+            <p className={style.edu}>{education}</p>
+            <p className={style.email}>{contact.email}</p>
           </div>
         </div>
         <div className={style.back}>
