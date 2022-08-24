@@ -52,7 +52,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Header noBg />
-      <div className={style.imageContainer}>
+      {/* <div className={style.imageContainer}>
         <Image
           src={hero}
           layout="fill"
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
           priority
           className={style.hero}
         />
-      </div>
+      </div> */}
       <div className={style.gameContainer}>
         <div className={style.game}>
           <div className={style.gameInnerContainer}>

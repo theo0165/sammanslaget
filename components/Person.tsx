@@ -9,6 +9,7 @@ interface Props {
   name: string;
   image: string;
   education: string;
+  description: string;
   contact: {
     linkedin?: string;
     email?: string;
@@ -17,7 +18,13 @@ interface Props {
   };
 }
 
-const Person: FC<Props> = ({ name, image, education, contact }) => {
+const Person: FC<Props> = ({
+  name,
+  image,
+  education,
+  contact,
+  description,
+}) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -57,13 +64,16 @@ const Person: FC<Props> = ({ name, image, education, contact }) => {
     >
       <div className={style.inner}>
         <div className={style.front}>
-          <Image src={image} layout="fill" objectFit="cover" priority />
+          <div className={style.imageContainer}>
+            <Image src={image} layout="fill" objectFit="cover" priority />
+          </div>
+          <div className={style.frontInfo}>
+            <h3>{name}</h3>
+            <p>{education}</p>
+          </div>
         </div>
         <div className={style.back}>
-          <div>
-            <h1>{name}</h1>
-            <h3>{education}</h3>
-          </div>
+          <div className={style.desc}>{description}</div>
           <div>
             {contact.email && (
               <a href={`mailto:${contact.email}`}>{contact.email}</a>

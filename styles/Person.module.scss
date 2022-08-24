@@ -1,12 +1,13 @@
 .card {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 330px;
   background-color: transparent;
   perspective: 1000px;
+  border-radius: 15px;
   //border-radius: 50%;
 
   * {
-    border-radius: 50%;
+    border-radius: 15px;
   }
 }
 
@@ -45,6 +46,29 @@
 .front {
   background-color: #bbb;
   color: black;
+  padding: 11px 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .imageContainer {
+    position: relative;
+    height: 230px;
+  }
+
+  .frontInfo {
+    h3 {
+      color: #0f5959;
+      font-weight: 600;
+      margin: 0;
+      padding-bottom: 10px;
+      font-size: 32px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
 }
 
 .back {
@@ -55,6 +79,10 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+
+  .desc {
+    padding-top: 70px;
+  }
 
   h1 {
     padding: 0;

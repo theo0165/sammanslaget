@@ -6,7 +6,7 @@ import style from "../styles/Om.module.scss";
 const Om: NextPage = () => {
   return (
     <div>
-      <Header />
+      <Header noBg />
       <div className={style.container}>
         <h1>
           Skapare från{" "}
@@ -33,6 +33,7 @@ const Om: NextPage = () => {
               name="Person 1"
               image="/profile.png"
               education="WU"
+              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
               contact={{
                 email: "test@example.com",
                 github: "https://github.com",
@@ -45,6 +46,7 @@ const Om: NextPage = () => {
               name="Person 2"
               image="/profile.png"
               education="WU"
+              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
               contact={{
                 email: "test@example.com",
                 github: "https://github.com",
@@ -57,6 +59,7 @@ const Om: NextPage = () => {
               name="Person 3"
               image="/profile.png"
               education="WU"
+              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
               contact={{
                 email: "test@example.com",
                 github: "https://github.com",
@@ -71,6 +74,7 @@ const Om: NextPage = () => {
               name="Person 4"
               image="/profile.png"
               education="WU"
+              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
               contact={{
                 email: "test@example.com",
                 github: "https://github.com",
@@ -83,6 +87,7 @@ const Om: NextPage = () => {
               name="Person 5"
               image="/profile.png"
               education="WU"
+              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
               contact={{
                 email: "test@example.com",
                 github: "https://github.com",
