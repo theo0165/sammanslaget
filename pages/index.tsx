@@ -12,9 +12,9 @@ const Home: NextPage = () => {
   const { unityProvider, loadingProgression, isLoaded, requestFullscreen } =
     useUnityContext({
       loaderUrl: "game/game.loader.js",
-      dataUrl: "game/game.data.gz",
-      frameworkUrl: "game/game.framework.js.gz",
-      codeUrl: "game/game.wasm.gz",
+      dataUrl: "game/game.data",
+      frameworkUrl: "game/game.framework.js",
+      codeUrl: "game/game.wasm",
     });
 
   const loadingPercentage = Math.round(loadingProgression * 100);
