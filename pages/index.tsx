@@ -7,14 +7,17 @@ import style from "../styles/Home.module.scss";
 import { RiFullscreenLine } from "react-icons/ri";
 
 const Home: NextPage = () => {
-  const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-    loaderUrl: "game/game.loader.js",
-    dataUrl: "game/game.data",
-    frameworkUrl: "game/game.framework.js",
-    codeUrl: "game/game.wasm",
-  });
+  const { unityProvider, loadingProgression, isLoaded, requestFullscreen } =
+    useUnityContext({
+      loaderUrl: "game/game.loader.js",
+      dataUrl: "game/game.data",
+      frameworkUrl: "game/game.framework.js",
+      codeUrl: "game/game.wasm",
+    });
 
   const loadingPercentage = Math.round(loadingProgression * 100);
+
+  const setFullscreen = () => requestFullscreen(true);
 
   return (
     <>
@@ -34,12 +37,16 @@ const Home: NextPage = () => {
             <Unity unityProvider={unityProvider} />
             {!isLoaded && (
               <div className={style.overlay}>
-                Loading... {loadingPercentage}%
+                <div className={style.overlayInner}></div>
               </div>
             )}
           </div>
           <div className={style.fullscreen}>
-            <RiFullscreenLine size="36px" color="white" />
+            <RiFullscreenLine
+              size="36px"
+              color="white"
+              onClick={setFullscreen}
+            />
           </div>
         </div>
       </div>
