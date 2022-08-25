@@ -12,21 +12,21 @@ const Bjorkafrihet: NextPage = () => {
           <div className={style.topContent}>
             <h1>Björk & Frihet</h1>
             <p>
-              Björk & Frihet är en secondhandkedja som jobbar för ett hållbart
+              Björk&frihet är en second hand-kedja som jobbar för ett hållbart
               samhälle.
               <br />
               <br />
-              När du lämnar in en gåva på en av Björk&frihets insamlingsplatser
+              När du lämnar in en gåva på en av björk&frihets insamlingsplatser
               körs den till en av deras sorteringsanläggningar i Göteborg eller
               Malmö. Där sorteras varje dag 4500 kg textilier och 5000 kg prylar
-              som säljs i någon av deras butiker. Pengarna som samlas in och
-              blir till överskott skänks till någon av deras
+              som därefter säljs i någon av deras butiker. Pengarna som samlas
+              in och blir till överskott skänks till något av deras
               solidaritetsprojekt. I vårt spel sorterar du prylar och textilier
               för att göra världen till en mer hållbar plats.
             </p>
             <div className={style.linkContainer}>
               <a href="https://bjorkafrihet.se">
-                Läs mer på Björk&frihets hemsida
+                Läs mer på björk&frihets hemsida
               </a>
               <MdArrowForwardIos />
             </div>
