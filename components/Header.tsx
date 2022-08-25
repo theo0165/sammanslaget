@@ -19,8 +19,6 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
 
   const toggleMobileMenu = () => setMobileOpen(!mobileOpen);
 
-  console.log(router.asPath);
-
   return (
     <header
       className={`

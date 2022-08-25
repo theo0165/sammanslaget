@@ -5,11 +5,15 @@ import Header from "../components/Header";
 import hero from "../public/hero.png";
 import style from "../styles/Home.module.scss";
 import { RiFullscreenLine } from "react-icons/ri";
-import { useEffect, useState } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { BrowserView, MobileView } from "react-device-detect";
+import { useRef } from "react";
 
 const Home: NextPage = () => {
   const [doesFullscreenWork, setDoesFullscreenWork] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
   const {
     unityProvider,
     loadingProgression,
@@ -46,42 +50,44 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (/iPhone|iP[oa]d|Mobile Safari/.test(navigator.userAgent)) {
       setDoesFullscreenWork(false);
+      setIsMobile(true);
     }
   }, []);
 
   return (
     <>
       <Header noBg />
-      {/* <div className={style.imageContainer}>
-        <Image
-          src={hero}
-          layout="fill"
-          objectFit="cover"
-          priority
-          className={style.hero}
-        />
-      </div> */}
-      <div className={style.gameContainer}>
-        <div className={style.game}>
-          <div className={style.gameInnerContainer}>
-            <Unity unityProvider={unityProvider} />
-            {!isLoaded && (
-              <div className={style.overlay}>
-                <div className={style.overlayInner}></div>
+      {!isMobile ? (
+        <div className={style.gameContainer}>
+          <div className={style.game}>
+            <div className={style.gameInnerContainer}>
+              <>
+                <Unity unityProvider={unityProvider} />
+              </>
+              {!isLoaded && (
+                <div className={style.overlay}>
+                  <div className={style.overlayInner}></div>
+                </div>
+              )}
+            </div>
+            {doesFullscreenWork && (
+              <div className={style.fullscreen}>
+                <RiFullscreenLine
+                  size="36px"
+                  color="white"
+                  onClick={setFullscreen}
+                />
               </div>
             )}
           </div>
-          {doesFullscreenWork && (
-            <div className={style.fullscreen}>
-              <RiFullscreenLine
-                size="36px"
-                color="white"
-                onClick={setFullscreen}
-              />
-            </div>
-          )}
         </div>
-      </div>
+      ) : (
+        <div className={style.mobile}>
+          <div className={style.mobileInner}>
+            <p>Använd en dator för en bättre spelupplevelse.</p>
+          </div>
+        </div>
+      )}
     </>
   );
 };
