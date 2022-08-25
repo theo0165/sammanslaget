@@ -33,7 +33,7 @@ const Om: NextPage = () => {
               name="Isabelle Zachén"
               image="/people/isabelle.png"
               education="UX-Designer"
-              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan. Säkerställt användbarhet och upplevelse."
+              description="Jag och Ida har ansvarat för projektledning, idégenerering, och prototyper i projektet. Även användartester för att säkertställa en bra användbarhet och upplevelse."
               contact={{
                 email: "isabelle_zachen@hotmail.com",
                 linkedin:
@@ -57,7 +57,7 @@ const Om: NextPage = () => {
               name="Theo Sandell"
               image="/people/theo.jpeg"
               education="Webbutvecklare"
-              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
+              description="Jag har ansvarat för att skapa hemsidan samt att få spelet att fungera på alla plattformar och enheter."
               contact={{
                 email: "theo01sandell@gmail.com",
                 github: "https://github.com/theo0165",
@@ -70,7 +70,7 @@ const Om: NextPage = () => {
           <div className={style.two}>
             <Person
               name="William Ullholm"
-              image="/people/william.jpeg"
+              image="/people/william.png"
               education="Game Creator Programmer"
               description="Jag har ansvarat för programmering och ljuddesign för spelet."
               contact={{
@@ -79,6 +79,7 @@ const Om: NextPage = () => {
                 linkedin:
                   "https://www.linkedin.com/in/william-ullholm-7a60901b6/",
               }}
+              imgPosition="top"
             />
 
             <Person
