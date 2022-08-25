@@ -1,5 +1,4 @@
 import style from "../styles/Header.module.scss";
-import logo from "../public/logo.png";
 import { MdMenu, MdOutlineGroups } from "react-icons/md";
 import { IoGameControllerOutline } from "react-icons/io5";
 import Link from "next/link";
