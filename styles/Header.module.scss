@@ -63,6 +63,18 @@
     &:first-of-type {
       padding-left: 0;
     }
+
+    &.active {
+      a {
+        font-weight: 700;
+      }
+    }
+
+    a {
+      &:hover {
+        font-weight: 700;
+      }
+    }
   }
 }
 

@@ -23,7 +23,10 @@
 .linkContainer {
   display: flex;
   align-items: center;
-  color: #cb3f3f;
+  color: white;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
 
   svg {
     margin-left: 4px;

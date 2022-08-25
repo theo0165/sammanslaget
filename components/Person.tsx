@@ -16,6 +16,7 @@ interface Props {
     github?: string;
     website?: string;
   };
+  imgPosition?: "top" | "center" | "bottom";
 }
 
 const Person: FC<Props> = ({
@@ -24,6 +25,7 @@ const Person: FC<Props> = ({
   education,
   contact,
   description,
+  imgPosition,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +67,14 @@ const Person: FC<Props> = ({
       <div className={style.inner}>
         <div className={style.front}>
           <div className={style.imageContainer}>
-            <Image src={image} layout="fill" objectFit="cover" priority />
+            <Image
+              alt={`Bild på ${name}`}
+              src={image}
+              layout="fill"
+              objectFit="cover"
+              priority
+              objectPosition={imgPosition ?? "center"}
+            />
           </div>
           <div className={style.frontInfo}>
             <h3>{name}</h3>

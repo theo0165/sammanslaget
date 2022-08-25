@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FC, useState } from "react";
 import Image from "next/image";
 import bofIcon from "../public/bof_icon.png";
+import { useRouter } from "next/router";
 
 interface Props {
   noBg?: boolean;
@@ -14,8 +15,11 @@ interface Props {
 
 const Header: FC<Props> = ({ noBg, absolute }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMobileMenu = () => setMobileOpen(!mobileOpen);
+
+  console.log(router.asPath);
 
   return (
     <header
@@ -34,14 +38,20 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
       </div>
       <nav>
         <ul className={style.navList}>
-          <li>
-            <Link href="/">Spelet</Link>
+          <li className={router.asPath === "/" ? style.active : ""}>
+            <Link href="/" title="Spelet">
+              Spelet
+            </Link>
           </li>
-          <li>
-            <Link href="/om">Om oss</Link>
+          <li className={router.asPath === "/om" ? style.active : ""}>
+            <Link href="/om" title="Om Oss">
+              Om oss
+            </Link>
           </li>
-          <li>
-            <Link href="/bjorkafrihet">björk&frihet</Link>
+          <li className={router.asPath === "/bjorkafrihet" ? style.active : ""}>
+            <Link href="/bjorkafrihet" title="björk&frihet">
+              björk&frihet
+            </Link>
           </li>
         </ul>
         <div className={style.hamburger}>

@@ -30,63 +30,61 @@ const Om: NextPage = () => {
         <div className={style.people}>
           <div className={style.three}>
             <Person
-              name="Person 1"
-              image="/profile.png"
-              education="WU"
+              name="Isabelle Zachén"
+              image="/people/isabelle.png"
+              education="UX-Designer"
               description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
               contact={{
-                email: "test@example.com",
-                github: "https://github.com",
-                website: "https://example.com",
-                linkedin: "https://linkedin.com",
+                email: "isabelle_zachen@hotmail.com",
+                linkedin:
+                  "https://www.linkedin.com/in/isabelle-zach%C3%A9n-70b916243/",
+              }}
+              imgPosition="top"
+            />
+
+            <Person
+              name="Ida Lundqvist"
+              image="/people/ida.jpg"
+              education="UX-Designer"
+              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
+              contact={{
+                email: "idaa5@hotmail.com",
+                linkedin: "http://linkedin.com/in/ida-lundqvist-1b17b6203",
               }}
             />
 
             <Person
-              name="Person 2"
-              image="/profile.png"
-              education="WU"
+              name="Theo Sandell"
+              image="/people/theo.jpeg"
+              education="Webbutvecklare"
               description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
               contact={{
-                email: "test@example.com",
-                github: "https://github.com",
-                website: "https://example.com",
-                linkedin: "https://linkedin.com",
+                email: "theo01sandell@gmail.com",
+                github: "https://github.com/theo0165",
+                linkedin: "https://www.linkedin.com/in/theosandell/",
               }}
-            />
-
-            <Person
-              name="Person 3"
-              image="/profile.png"
-              education="WU"
-              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
-              contact={{
-                email: "test@example.com",
-                github: "https://github.com",
-                website: "https://example.com",
-                linkedin: "https://linkedin.com",
-              }}
+              imgPosition="top"
             />
           </div>
 
           <div className={style.two}>
             <Person
-              name="Person 4"
-              image="/profile.png"
-              education="WU"
-              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
+              name="William Ullholm"
+              image="/people/william.jpeg"
+              education="Game Creator Programmer"
+              description="Jag har ansvarat för programmering och ljuddesign för spelet."
               contact={{
-                email: "test@example.com",
-                github: "https://github.com",
-                website: "https://example.com",
-                linkedin: "https://linkedin.com",
+                email: "williamullholm@gmail.com",
+                github: "https://github.com/WilUll",
+                linkedin:
+                  "https://www.linkedin.com/in/william-ullholm-7a60901b6/",
               }}
             />
 
             <Person
-              name="Person 5"
+              name="Medina Ljufi"
               image="/profile.png"
-              education="WU"
+              education="Game Creator Artist"
               description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
               contact={{
                 email: "test@example.com",
