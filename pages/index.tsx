@@ -9,6 +9,7 @@ import { MutableRefObject, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { BrowserView, MobileView } from "react-device-detect";
 import { useRef } from "react";
+import testMobile from "../helpers/testMobile";
 
 const Home: NextPage = () => {
   const [doesFullscreenWork, setDoesFullscreenWork] = useState(true);
@@ -33,6 +34,14 @@ const Home: NextPage = () => {
 
   const setFullscreen = () => requestFullscreen(true);
 
+  const handleResize = () => {
+    if (window.innerWidth < 1000) {
+      setIsMobile(true);
+    } else if (!testMobile()) {
+      setIsMobile(false);
+    }
+  };
+
   useEffect(() => {
     const handleRouteChange = async () => {
       await unload();
@@ -48,10 +57,16 @@ const Home: NextPage = () => {
   }, [router]);
 
   useEffect(() => {
-    if (/iPhone|iP[oa]d|Mobile Safari/.test(navigator.userAgent)) {
+    if (testMobile()) {
       setDoesFullscreenWork(false);
       setIsMobile(true);
     }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (

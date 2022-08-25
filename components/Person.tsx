@@ -4,6 +4,7 @@ import style from "../styles/Person.module.scss";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { MdOpenInNew } from "react-icons/md";
 import Link from "next/link";
+import testMobile from "../helpers/testMobile";
 
 interface Props {
   name: string;
@@ -31,22 +32,7 @@ const Person: FC<Props> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const ua = navigator.userAgent;
-    if (
-      /IEMobile|Windows Phone|Lumia/i.test(ua)
-        ? true
-        : /iPhone|iP[oa]d/.test(ua)
-        ? true
-        : /Android/.test(ua)
-        ? true
-        : /BlackBerry|PlayBook|BB10/.test(ua)
-        ? true
-        : /Mobile Safari/.test(ua)
-        ? true
-        : /webOS|Mobile|Tablet|Opera Mini|\bCrMo\/|Opera Mobi/i.test(ua)
-        ? true
-        : false || window.matchMedia("(hover: none)").matches
-    ) {
+    if (testMobile()) {
       setIsMobile(true);
     }
   }, []);
