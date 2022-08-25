@@ -71,3 +71,107 @@
     padding: 24px;
   }
 }
+
+.overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .overlayInner {
+    color: white;
+
+    p {
+      margin: 0;
+      margin-bottom: 0px;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.loadingGlobe {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  //background: white;
+  border-radius: 50%;
+
+  .loadingOverlay,
+  .loadingImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .loadingOverlay {
+    transition: all 0.5s linear;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 9999;
+  }
+
+  .loadingImage {
+    img {
+      object-fit: cover;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.dotOne,
+.dotTwo,
+.dotThree {
+  width: 3px;
+  height: 3px;
+  background: white;
+  display: inline-block;
+  border-radius: 50%;
+  right: 0px;
+  bottom: 0px;
+  margin: 0px 2.5px;
+  position: relative;
+  animation: jump 1s infinite;
+}
+
+.dotOne {
+  -webkit-animation-delay: 100ms;
+  animation-delay: 100ms;
+}
+
+.dotTwo {
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+}
+
+.dotThree {
+  -webkit-animation-delay: 300ms;
+  animation-delay: 300ms;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0px;
+  }
+  20% {
+    bottom: 5px;
+  }
+  40% {
+    bottom: 0px;
+  }
+}

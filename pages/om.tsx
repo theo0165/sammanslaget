@@ -33,7 +33,7 @@ const Om: NextPage = () => {
               name="Isabelle Zachén"
               image="/people/isabelle.png"
               education="UX-Designer"
-              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
+              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan. Säkerställt användbarhet och upplevelse."
               contact={{
                 email: "isabelle_zachen@hotmail.com",
                 linkedin:
@@ -46,7 +46,7 @@ const Om: NextPage = () => {
               name="Ida Lundqvist"
               image="/people/ida.jpg"
               education="UX-Designer"
-              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
+              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan. Säkerställt användbarhet och upplevelse."
               contact={{
                 email: "idaa5@hotmail.com",
                 linkedin: "http://linkedin.com/in/ida-lundqvist-1b17b6203",
