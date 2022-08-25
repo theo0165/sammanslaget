@@ -24,7 +24,7 @@
     flex-direction: column;
     row-gap: 90px;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1120px) {
       align-items: center;
     }
 
@@ -34,7 +34,7 @@
       column-gap: 90px;
       justify-content: center;
 
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 1120px) {
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 90px;

@@ -79,11 +79,6 @@ const Home: NextPage = () => {
               <>
                 <Unity unityProvider={unityProvider} />
               </>
-              {!isLoaded && (
-                <div className={style.overlay}>
-                  <div className={style.overlayInner}></div>
-                </div>
-              )}
             </div>
             {doesFullscreenWork && (
               <div className={style.fullscreen}>
