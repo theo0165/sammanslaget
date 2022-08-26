@@ -2,7 +2,7 @@ import style from "../styles/Header.module.scss";
 import { MdMenu, MdOutlineGroups } from "react-icons/md";
 import { IoGameControllerOutline } from "react-icons/io5";
 import Link from "next/link";
-import { FC, useState } from "react";
+import { FC, MouseEventHandler, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import bofIcon from "../public/bof_icon.png";
 import { useRouter } from "next/router";
@@ -15,8 +15,25 @@ interface Props {
 const Header: FC<Props> = ({ noBg, absolute }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const router = useRouter();
+  const mobileMenu = useRef<HTMLDivElement>(null);
 
-  const toggleMobileMenu = () => setMobileOpen(!mobileOpen);
+  const toggleMobileMenu = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  // useState(() => {
+  //   const handleOutsideClick = (e) => {
+  //     if (mobileMenu.current && !mobileMenu.current.contains(e.target)) {
+  //       setMobileOpen(false);
+  //     }
+  //   };
+
+  //   document.addEventListener("mousedown", handleOutsideClick);
+
+  //   return () => {
+  //     document.addEventListener("mousedown", handleOutsideClick);
+  //   };
+  // }, []);
 
   return (
     <header
@@ -55,7 +72,10 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
           <MdMenu size={"32px"} onClick={toggleMobileMenu} />
         </div>
       </nav>
-      <nav className={`${style.mobileMenu} ${mobileOpen && style.open}`}>
+      <div
+        className={`${style.mobileMenu} ${mobileOpen && style.open}`}
+        ref={mobileMenu}
+      >
         <div className={style.mobileMenuInner}>
           <ul>
             <li>
@@ -72,7 +92,7 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
             </li>
           </ul>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

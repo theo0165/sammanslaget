@@ -4,12 +4,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   padding: 24px;
   padding-bottom: 8px;
   color: white;
   border-bottom: 1px solid white;
   margin-bottom: 24px;
+  padding-bottom: 0;
 }
 
 .absolute {
@@ -46,6 +47,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  margin-bottom: 5px;
 
   @media screen and (max-width: 768px) {
     display: none;
