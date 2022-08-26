@@ -4,8 +4,10 @@
   background: rgba(7, 56, 61, 0.9);
   max-width: 1050px;
   padding: 50px 70px;
+  padding-bottom: 80px;
   margin-bottom: 50px;
   border-radius: 15px;
+  margin-top: 50px;
 
   > h1 {
     text-align: center;
@@ -13,6 +15,7 @@
     padding: 0;
     font-weight: 300;
     color: white;
+    margin-top: 0px;
 
     svg {
       height: 25px;
