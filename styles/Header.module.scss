@@ -45,6 +45,11 @@
       width: 220px;
     }
   }
+
+  a {
+    display: flex;
+    column-gap: 12px;
+  }
 }
 
 .navList {

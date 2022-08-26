@@ -6,6 +6,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import bofIcon from "../public/bof_icon.png";
 import { useRouter } from "next/router";
+import coin from "../public/coin.png";
 
 interface Props {
   noBg?: boolean;
@@ -49,6 +50,7 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
         <Link href="/">
           <a>
             <h1>Sortera mera!</h1>
+            <Image src={coin} width="45px" height="45px" />
           </a>
         </Link>
       </div>

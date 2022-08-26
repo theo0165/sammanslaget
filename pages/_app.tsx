@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Sortera Mera!</title>
+        <link rel="shortcut icon" href="favicon.ico"></link>
       </Head>
       <Component {...pageProps} />
       <Footer />
