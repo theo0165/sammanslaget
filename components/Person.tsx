@@ -5,12 +5,14 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { MdOpenInNew } from "react-icons/md";
 import Link from "next/link";
 import testMobile from "../helpers/testMobile";
+import yrgoIcon from "../public/yrgo.png";
 
 interface Props {
   name: string;
   image: string;
   education: string;
   description: string;
+  eduLink: string;
   contact: {
     linkedin?: string;
     email?: string;
@@ -26,6 +28,7 @@ const Person: FC<Props> = ({
   education,
   contact,
   description,
+  eduLink,
   imgPosition,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -75,6 +78,18 @@ const Person: FC<Props> = ({
               <a href={`mailto:${contact.email}`}>{contact.email}</a>
             )}
             <div className={style.links}>
+              <div className={style.yrgoLink}>
+                <Link href={eduLink}>
+                  <a target="_blank">
+                    <Image
+                      src={yrgoIcon}
+                      width="19px"
+                      height="19px"
+                      className={style.noRadius}
+                    />
+                  </a>
+                </Link>
+              </div>
               {contact.linkedin && (
                 <Link href={contact.linkedin}>
                   <a target="_blank">

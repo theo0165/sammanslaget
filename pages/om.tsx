@@ -34,6 +34,7 @@ const Om: NextPage = () => {
               image="/people/isabelle.png"
               education="UX-Designer"
               description="Jag och Ida har ansvarat för projektledning, idégenerering, och prototyper i projektet. Även användartester för att säkertställa en bra användbarhet och upplevelse."
+              eduLink="https://www.yrgo.se/utbildningar/ux-designer/"
               contact={{
                 email: "isabelle_zachen@hotmail.com",
                 linkedin:
@@ -47,6 +48,7 @@ const Om: NextPage = () => {
               image="/people/ida.jpg"
               education="UX-Designer"
               description="Jag och Isabelle har ansvarat för projektledning, idégenerering, och prototyper i projektet. Även användartester för att säkertställa en bra användbarhet och upplevelse."
+              eduLink="https://www.yrgo.se/utbildningar/ux-designer/"
               contact={{
                 email: "idaa5@hotmail.com",
                 linkedin: "http://linkedin.com/in/ida-lundqvist-1b17b6203",
@@ -58,6 +60,7 @@ const Om: NextPage = () => {
               image="/people/theo.jpeg"
               education="Webbutvecklare"
               description="Jag har ansvarat för att skapa hemsidan samt att få spelet att fungera på alla plattformar och enheter."
+              eduLink="https://www.yrgo.se/utbildningar/webbutvecklare/"
               contact={{
                 email: "theo01sandell@gmail.com",
                 github: "https://github.com/theo0165",
@@ -73,6 +76,7 @@ const Om: NextPage = () => {
               image="/people/william.png"
               education="Game Creator Programmer"
               description="Jag har ansvarat för programmering och ljuddesign för spelet."
+              eduLink="https://www.yrgo.se/utbildningar/game-creator-programmer/"
               contact={{
                 email: "williamullholm@gmail.com",
                 github: "https://github.com/WilUll",
@@ -87,6 +91,7 @@ const Om: NextPage = () => {
               image="/profile.png"
               education="Game Creator Artist"
               description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
+              eduLink="https://www.yrgo.se/utbildningar/game-creator-artist/"
               contact={{
                 email: "test@example.com",
                 github: "https://github.com",
