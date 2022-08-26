@@ -88,15 +88,12 @@ const Om: NextPage = () => {
 
             <Person
               name="Medina Ljufi"
-              image="/profile.png"
+              image="/people/medina.png"
               education="Game Creator Artist"
-              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan."
+              description="Jag har arbetat med att producera grafik till spelet och har gjort all miljö och alla prylar samt hjälpt till med ide tänkandet kring spelets funktion. "
               eduLink="https://www.yrgo.se/utbildningar/game-creator-artist/"
               contact={{
-                email: "test@example.com",
-                github: "https://github.com",
-                website: "https://example.com",
-                linkedin: "https://linkedin.com",
+                email: "medlju1231@skola.goteborg.se",
               }}
             />
           </div>
