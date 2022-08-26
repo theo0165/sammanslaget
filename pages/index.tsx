@@ -125,6 +125,30 @@ const Home: NextPage = () => {
           <div className={style.mobileInner}>
             <p>Använd en dator för en bättre spelupplevelse.</p>
           </div>
+          <div className={style.mobileGameContainer}>
+            <Unity className={style.mobileGame} unityProvider={unityProvider} />
+            {!isLoaded && (
+              <div className={style.overlay}>
+                <div className={style.overlayInner}>
+                  <p>
+                    Laddar
+                    <span className={style.dotOne}></span>
+                    <span className={style.dotTwo}></span>
+                    <span className={style.dotThree}></span>
+                  </p>
+                  <div className={style.loadingGlobe}>
+                    <div
+                      className={style.loadingOverlay}
+                      style={{ height: `${100 - loadingPercentage}%` }}
+                    ></div>
+                    <div className={style.loadingImage}>
+                      <img src="/earth.png" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </>

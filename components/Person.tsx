@@ -80,7 +80,7 @@ const Person: FC<Props> = ({
             <div className={style.links}>
               <div className={style.yrgoLink}>
                 <Link href={eduLink}>
-                  <a target="_blank">
+                  <a target="_blank" rel="noreferrer">
                     <Image
                       src={yrgoIcon}
                       width="19px"
@@ -92,7 +92,7 @@ const Person: FC<Props> = ({
               </div>
               {contact.linkedin && (
                 <Link href={contact.linkedin}>
-                  <a target="_blank">
+                  <a target="_blank" rel="noreferrer">
                     <AiFillLinkedin size="24px" color="#0077b5" />
                   </a>
                 </Link>
@@ -100,7 +100,7 @@ const Person: FC<Props> = ({
 
               {contact.github && (
                 <Link href={contact.github}>
-                  <a target="_blank">
+                  <a target="_blank" rel="noreferrer">
                     <AiFillGithub size="24px" />
                   </a>
                 </Link>
@@ -108,7 +108,7 @@ const Person: FC<Props> = ({
 
               {contact.website && (
                 <Link href={contact.website}>
-                  <a target="_blank">
+                  <a target="_blank" rel="noreferrer">
                     <MdOpenInNew size="24px" />
                   </a>
                 </Link>

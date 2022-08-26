@@ -5,7 +5,7 @@ import style from "../styles/Footer.module.scss";
 const Footer: FC = () => {
   return (
     <footer className={style.container}>
-      <a href="https://yrgo.se" target="_blank">
+      <a href="https://yrgo.se" target="_blank" rel="noreferrer">
         <svg
           className="h-full"
           focusable="false"
@@ -20,7 +20,7 @@ const Footer: FC = () => {
           </g>
         </svg>
       </a>
-      <a href="https://bjorkafrihet.se/" target="_blank">
+      <a href="https://bjorkafrihet.se/" target="_blank" rel="noreferrer">
         <Image src="/logo.png" width="163px" height="25px" />
       </a>
     </footer>
