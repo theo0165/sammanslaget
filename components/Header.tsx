@@ -2,7 +2,7 @@ import style from "../styles/Header.module.scss";
 import { MdMenu, MdOutlineGroups } from "react-icons/md";
 import { IoGameControllerOutline } from "react-icons/io5";
 import Link from "next/link";
-import { FC, MouseEventHandler, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import bofIcon from "../public/bof_icon.png";
 import { useRouter } from "next/router";
@@ -15,25 +15,27 @@ interface Props {
 const Header: FC<Props> = ({ noBg, absolute }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const router = useRouter();
+  const mobileMenuOuter = useRef<HTMLDivElement>(null);
   const mobileMenu = useRef<HTMLDivElement>(null);
+  const hamburger = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  // useState(() => {
-  //   const handleOutsideClick = (e) => {
-  //     if (mobileMenu.current && !mobileMenu.current.contains(e.target)) {
-  //       setMobileOpen(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (e.target === mobileMenuOuter.current) {
+        setMobileOpen(false);
+      }
+    };
 
-  //   document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("click", handleOutsideClick);
 
-  //   return () => {
-  //     document.addEventListener("mousedown", handleOutsideClick);
-  //   };
-  // }, []);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  });
 
   return (
     <header
@@ -68,15 +70,15 @@ const Header: FC<Props> = ({ noBg, absolute }) => {
             </Link>
           </li>
         </ul>
-        <div className={style.hamburger}>
+        <div className={style.hamburger} ref={hamburger}>
           <MdMenu size={"32px"} onClick={toggleMobileMenu} />
         </div>
       </nav>
       <div
         className={`${style.mobileMenu} ${mobileOpen && style.open}`}
-        ref={mobileMenu}
+        ref={mobileMenuOuter}
       >
-        <div className={style.mobileMenuInner}>
+        <div className={style.mobileMenuInner} ref={mobileMenu}>
           <ul>
             <li>
               <IoGameControllerOutline size={32} color="black" />
