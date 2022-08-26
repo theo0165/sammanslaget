@@ -25,7 +25,7 @@ const Bjorkafrihet: NextPage = () => {
               för att göra världen till en mer hållbar plats.
             </p>
             <div className={style.linkContainer}>
-              <a href="https://bjorkafrihet.se">
+              <a href="https://bjorkafrihet.se" target="_blank">
                 Läs mer på björk&frihets hemsida
               </a>
               <MdArrowForwardIos />
