@@ -51,7 +51,7 @@
 }
 
 .inner > div {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
@@ -86,14 +86,6 @@
       font-weight: 500;
       font-size: 24px;
     }
-
-    // p {
-    //   margin: 0;
-
-    //   &.edu {
-    //     font-weight: 600;
-    //   }
-    // }
 
     .edu {
       font-weight: bold;
