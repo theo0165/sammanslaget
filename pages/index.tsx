@@ -125,6 +125,12 @@ const Home: NextPage = () => {
           <div className={style.mobileInner}>
             <p>Använd en dator för en bättre spelupplevelse.</p>
           </div>
+          <>
+            <Unity
+              style={{ width: "100%", height: "100vw" }}
+              unityProvider={unityProvider}
+            />
+          </>
         </div>
       )}
     </>
