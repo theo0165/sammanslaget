@@ -21,6 +21,8 @@ const Home: NextPage = () => {
     isLoaded,
     requestFullscreen,
     unload,
+    addEventListener,
+    removeEventListener,
   } = useUnityContext({
     loaderUrl: "game/game.loader.js",
     dataUrl: "game/game.data",
@@ -40,6 +42,10 @@ const Home: NextPage = () => {
     } else if (!testMobile()) {
       setIsMobile(false);
     }
+  };
+
+  const handleExitFullscreen = () => {
+    requestFullscreen(false);
   };
 
   useEffect(() => {
@@ -63,9 +69,11 @@ const Home: NextPage = () => {
     }
 
     window.addEventListener("resize", handleResize);
+    addEventListener("FullScreen", handleExitFullscreen);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      removeEventListener("FullScreen", handleExitFullscreen);
     };
   }, []);
 

@@ -78,7 +78,7 @@ const Person: FC<Props> = ({
               {contact.linkedin && (
                 <Link href={contact.linkedin}>
                   <a target="_blank">
-                    <AiFillLinkedin size="24px" />
+                    <AiFillLinkedin size="24px" color="#0077b5" />
                   </a>
                 </Link>
               )}

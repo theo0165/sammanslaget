@@ -46,7 +46,7 @@ const Om: NextPage = () => {
               name="Ida Lundqvist"
               image="/people/ida.jpg"
               education="UX-Designer"
-              description="Jag har ansvarat för idégenerering, användartester av spelet samt gjort prototyper av hemsidan. Säkerställt användbarhet och upplevelse."
+              description="Jag och Isabelle har ansvarat för projektledning, idégenerering, och prototyper i projektet. Även användartester för att säkertställa en bra användbarhet och upplevelse."
               contact={{
                 email: "idaa5@hotmail.com",
                 linkedin: "http://linkedin.com/in/ida-lundqvist-1b17b6203",
