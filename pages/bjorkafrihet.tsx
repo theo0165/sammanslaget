@@ -10,7 +10,7 @@ const Bjorkafrihet: NextPage = () => {
       <div className={style.container}>
         <div>
           <div className={style.topContent}>
-            <h1>Björk & Frihet</h1>
+            <h1>Lite information om björk&frihet</h1>
             <p>
               Björk&frihet är en second hand-kedja som jobbar för ett hållbart
               samhälle.
